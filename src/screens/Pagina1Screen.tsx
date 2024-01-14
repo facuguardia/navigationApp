@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Text, View} from 'react-native';
+import {Button, Text, TouchableOpacity, View} from 'react-native';
 import {StackScreenProps} from '@react-navigation/stack';
 import {styles} from '../theme/appTheme';
 
@@ -19,6 +19,16 @@ export const Pagina1Screen = ({navigation}: Props) => {
         title="Ir a pagina 2"
         onPress={() => navigation.navigate('Página 2')}
       />
+      <TouchableOpacity
+        style={styles.buttonPerson}
+        onPress={() => navigation.navigate('Persona', {id: 1, name: 'Pedro'})}>
+        <Text style={styles.buttonText}>Pedro</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.buttonPerson}
+        onPress={() => navigation.navigate('Persona', {id: 2, name: 'Maria'})}>
+        <Text style={styles.buttonText}>Maria</Text>
+      </TouchableOpacity>
     </View>
   );
 };
